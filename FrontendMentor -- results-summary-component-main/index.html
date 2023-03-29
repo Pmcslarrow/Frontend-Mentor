@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="main-block">
+    
+
+      <div class="flex-horizontal">
+        <div class="flex-item purple-block">
+          <div class="flex-vertical">
+            <h2>Your Result</h2>
+            <span class="circle">
+              <div>
+                <h1>76</h1>
+                <p>of 100</p>
+              </div>
+            </span>
+            <br />
+            <h1 id="great">Great</h1>
+            <br />
+            <div>
+              <p>
+                You scored higher than 65% of <br />
+                the people who have taken <br />
+                these tests.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="flex-item right-block">
+          <div class="flex-vertical">
+            <h2 id="summary">Summary</h2>
+
+            <div class="bar container" id="red">
+                <div class="left">
+                  <img src="./assets/images/icon-reaction.svg" />
+                  <p>Reaction</p>
+                </div>
+                <div class="spacer"></div>
+                <div class="right">
+                  <p class="bold">80</p>
+                  <p class="fade"> / 100</p>
+                </div>
+            </div>
+
+            <div class="bar container" id="yellow">
+              <div class="left">
+                <img src="./assets/images/icon-memory.svg" />
+                <p>Memory</p>
+              </div>
+              <div class="spacer"></div>
+              <div class="right">
+                <p class="bold">92</p>
+                <p class="fade"> / 100</p>
+              </div>
+          </div>
+
+          <div class="bar container" id="green">
+            <div class="left">
+              <img src="./assets/images/icon-verbal.svg" />
+              <p>Verbal</p>
+            </div>
+            <div class="spacer"></div>
+            <div class="right">
+              <p class="bold">61</p>
+              <p class="fade"> / 100</p>
+            </div>
+        </div>
+
+        <div class="bar container" id="blue">
+          <div class="left">
+            <img src="./assets/images/icon-visual.svg" />
+            <p>Visual</p>
+          </div>
+          <div class="spacer"></div>
+          <div class="right">
+            <p class="bold">72</p>
+            <p class="fade"> / 100</p>
+          </div>
+      </div>
+            <br />
+            <div class="button">
+              <p>Continue</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+
+<style>
+  :root {
+    --lightRed: hsl(0, 100%, 67%);
+    --orangeyYellow: hsl(39, 100%, 56%);
+    --greenTeal: hsl(166, 100%, 37%);
+    --cobalt: hsl(234, 85%, 45%);
+    --lightSlateBlue: hsl(252, 100%, 67%);
+    --lightRoyalBlue : hsl(241, 81%, 54%);
+    --violetBlue : hsla(256, 72%, 46%, 1);
+    --persianBlue : hsla(241, 72%, 46%, 0.95);
+    --white: hsl(0, 0%, 100%);
+    --paleBlue: hsl(221, 100%, 96%);
+    --lightLavender: hsl(241, 100%, 89%);
+    --darkGrayBlue: hsl(224, 30%, 27%);
+    --body-font-size : 18px;
+  }
+
+  @font-face {
+    font-family: myFont;
+    src: url('./assets/fonts/HankenGrotesk-VariableFont_wght.ttf');
+  }
+
+  body {
+    font-family: myFont;
+    background-color: rgb(127, 127, 127);
+  }
+
+  div {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 { margin: 0; padding: 0; }
+  p { margin: 0; padding: 0; }
+
+  h2 {
+    color: var(--lightLavender);
+    font-weight: 500;
+  }
+
+  /* Desktop  376*/
+  @media screen and (min-width: 730px)  {
+
+    
+  .main-block {
+    background-color: var(--white);
+    position: absolute;
+    width: 50%;
+    height: 70%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+  }
+
+  .purple-block {
+    position: absolute;
+    background-image: linear-gradient(to bottom, hsl(252, 100%, 67%) 20%,hsl(241, 81%, 54%) 80%);
+    width: 50%;
+    height: 100%;
+    border-radius: 25px;
+  }
+
+  .right-block {
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    border-radius: 0 25px 25px 0;
+    padding: 50px;
+  }
+
+  .flex-horizontal {
+    display: flex;
+    align-content: space-between;
+  }
+
+  .purple-block .flex-vertical {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+
+
+  .right-block .flex-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .circle {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-image: linear-gradient(to bottom, hsla(256, 72%, 46%, 1) 20%, hsla(241, 72%, 46%, 0) 80%);
+  }
+
+  .circle h1 {
+    font-size: 70px;
+    color: var(--paleBlue);
+  }
+
+  .circle p{
+    color: var(--lightLavender);
+  }
+
+  .circle div {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  h1 {
+    color: var(--paleBlue);
+  }
+
+  .purple-block .flex-vertical p {
+    text-align: center;
+    color: var(--lightLavender);
+  }
+
+  .right-block .flex-vertical h2 {
+    color: var(--darkGrayBlue);
+    font-weight: 800;
+  }
+
+  .button {
+    width: 75%;
+    height: 50px;
+    background-color: var(--darkGrayBlue);
+    border-radius: 30px;
+    text-align: center;
+  }
+
+  .button:hover {
+    background-image: linear-gradient(to bottom, hsl(252, 100%, 67%) 5%,hsl(241, 81%, 54%) 80%);  
+    cursor: pointer;
+  }
+
+  .button p {
+    position: relative;
+    top: 50%;
+    color: var(--white);
+    transform: translate(0, -50%);
+  }
+
+  .bar {
+    height: 40px;
+    width: 75%;
+    border-radius: 10px;
+  }
+
+  .right-block .flex-vertical span {
+    font-weight: 500;
+  }
+
+  #red {
+    background: rgba(192, 72, 72, 0.1);
+    color: var(--lightRed);
+  }
+
+  #yellow {
+    background: hsl(39, 100%, 95%);
+    color: var(--orangeyYellow);
+  }
+
+  #green {
+    background: hsl(166, 100%, 95%);
+    color: var(--greenTeal);
+  }
+
+  #blue {
+    background: hsl(234, 85%, 95%);
+    color: var(--cobalt);
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .left, .right {
+    display: flex;
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  .left p, .left img {
+    margin-left: 10px;
+  }
+
+  .right p {
+    margin-right: 10px;
+
+  }
+
+  .bold {
+    color: var(--darkGrayBlue);
+    font-weight: 800;
+  }
+
+  .fade {
+    color: gray;
+    font-weight: 500;
+  }
+
+  }
+
+  /* Mobile  375 */
+  @media screen and (max-width: 729px)  {
+
+    .main-block {
+      background-color: var(--white);
+      position: absolute;
+      width: 100%;
+      height: 120%;
+      top: 50%;
+      transform: translate(-8px, -50%);
+    }
+
+    .flex-horizontal {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+    }
+
+    .purple-block .flex-vertical {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      top: 55%;
+      transform: translate(0, -50%);
+    }
+
+    .purple-block {
+      position: absolute;
+      background-image: linear-gradient(to bottom, hsl(252, 100%, 67%) 20%,hsl(241, 81%, 54%) 80%);
+      width: 99vw;
+      height: 50%;
+      left: -8px;
+      top: -8px;
+      border-radius: 25px;
+    }
+
+    .right-block .flex-vertical {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      position: relative;
+    }
+
+    .circle {
+      position: relative;
+      left: 50%;
+      transform: translate(-50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      background-image: linear-gradient(to bottom, hsla(256, 72%, 46%, 1) 20%, hsla(241, 72%, 46%, 0) 80%);
+    }
+
+    .circle h1 {
+      font-size: 50px;
+      color: var(--paleBlue);
+    }
+
+    .circle p{
+      color: var(--lightLavender);
+      font-size: 12px; 
+    }
+
+    .circle div {
+      position: relative;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+
+    h1 {
+      color: var(--paleBlue);
+    }
+
+    .purple-block .flex-vertical p {
+      text-align: center;
+      color: var(--lightLavender);
+    }
+
+    .purple-block .flex-vertical h2 { font-size: var(--body-font-size); }
+
+    #great {
+      font-size: 30px;
+    }
+
+    .right-block .flex-vertical h2 {
+      color: var(--darkGrayBlue);
+      font-weight: 800;
+      font-size: var(--body-font-size);
+    }
+
+
+  .right-block {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 25px 25px 0;
+    padding-left: 10px;
+  }
+
+
+  .bar {
+    height: 50px;
+    width: 95%;
+    border-radius: 10px;
+  }
+
+  .right-block .flex-vertical span {
+    font-weight: 500;
+  }
+
+  #red {
+    background: rgba(192, 72, 72, 0.1);
+    color: var(--lightRed);
+  }
+
+  #yellow {
+    background: hsl(39, 100%, 95%);
+    color: var(--orangeyYellow);
+  }
+
+  #green {
+    background: hsl(166, 100%, 95%);
+    color: var(--greenTeal);
+  }
+
+  #blue {
+    background: hsl(234, 85%, 95%);
+    color: var(--cobalt);
+  }
+
+  
+
+  .right {
+    text-align: right;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .left, .right {
+    display: flex;
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  .left p, .left img {
+    margin-left: 10px;
+  }
+
+  .right p {
+    margin-right: 10px;
+
+  }
+
+  .bold {
+    color: var(--darkGrayBlue);
+    font-weight: 800;
+  }
+
+  .fade {
+    color: gray;
+    font-weight: 500;
+  }
+
+  .button {
+    width: 80%;
+    height: 50px;
+    background-color: var(--darkGrayBlue);
+    border-radius: 30px;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translate(-53%);
+  }
+
+  .button:hover {
+    background-image: linear-gradient(to bottom, hsl(252, 100%, 67%) 5%,hsl(241, 81%, 54%) 80%);  
+    cursor: pointer;
+  }
+
+  .button p {
+    position: relative;
+    top: 50%;
+    color: var(--white);
+    transform: translate(0, -50%);
+  }
+
+  }
+
+</style>
+</html>

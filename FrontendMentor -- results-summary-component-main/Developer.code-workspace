@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "Developer",
+			"path": "../../Developer"
+		},
+		{
+			"name": "results-summary-component-main",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
