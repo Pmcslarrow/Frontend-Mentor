@@ -10,11 +10,52 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    @import url("https://fonts.google.com/specimen/League+Spartan");
+
+    :root {
+      --Dark-Gray: hsl(0, 0%, 63%);
+      --Black: hsl(0, 0%, 0%);
+      --White: hsl(0, 0%, 100%);
+      --Very-Dark-Gray: hsl(0, 0%, 27%);
+      --Font-Size: 12px;
+      --Font-Family: 'Specimen', sans-serif;
+      --Weight-500: 500;
+      --Weight-600: 600;
+      --Weight-700: 700;
+    }
+    div {
+      margin: 0;
+      padding: 0;
+    }
+
+    body { margin: 0;}
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+
+    #container {
+      display: flex;
+      position: absolute;
+      width: 100vw;
+      height: 100%;
+    }
+
   </style>
 </head>
 <body>
+
+  <div id="container">
+    <div class="row">
+      <div></div>
+      <div></div>
+    </div>
+    <div class="row">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <!--
   Home
   Shop
   About
@@ -50,7 +91,7 @@
   Make each room unique, or pick a cohesive theme that best express your interests and what
   inspires you. Find the furniture pieces you need, from traditional to contemporary styles
   or anything in between. Product specialists are available to help you create your dream space.
-  
+  -->
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
